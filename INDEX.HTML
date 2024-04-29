@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="idn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple E-commerce Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #047d1f;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin: 0;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        nav ul li {
+            display: inline-flex;
+            margin-right: 10px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        aside {
+            margin: auto;
+            width: 30%;
+            padding: 20px;
+        }
+        
+        #cart {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        #emptyCartButton {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Responsive Styling */
+        @media only screen and (max-width: 600px) {
+            #emptyCartButton {
+                font-size: 14px; /* Adjust font size for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome Aditya Plan Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="product">Produk</a></li>
+                <li><a href="cart">Keranjang</a></li>
+                <li><a href="contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="product">
+            <h2>Tanaman hias jenis sansevieria masonia</h2>
+            <p>Harga: Rp.50.000</p>
+            <img src="produk 2.jpg" alt="Tanaman hias jenis sansevieria masonia" width="50%">
+            <button class="addToCartButton" onclick="addToCart('Tanaman hias jenis sansevieria masonia', 'Rp.50.000')">Tambahkan ke Keranjang</button>
+            <a href="https://id.shp.ee/N7GFMHU" class="buy-button">Beli</a>
+        </div>
+        <div class="product">
+            <h2>Tanaman hias Golden flame black</h2>
+            <p>Harga: Rp.75.000</p>
+            <img src="produk 2.2.jpeg" alt="Tanaman hias Golden flame black">
+            <button class="addToCartButton" onclick="addToCart('Tanaman hias Golden flame black', 'Rp.75.000')">Tambahkan ke Keranjang</button>
+            <a href="https://id.shp.ee/N7GFMHU" class="buy-button">Beli</a>
+        </div>
+    </main>
+
+    <aside>
+        <div id="cart">
+            <h2>Keranjang</h2>
+            <div id="cartContent"></div>
+            <button id="emptyCartButton" onclick="emptyCart()">Kosongkan Keranjang</button>
+        </div>
+    </aside>
+
+    <footer>
+        <p>Hak Cipta &copy; 2024 ADITYA SETIAWAN</p>
+    </footer>
+
+    <script>
+        function addToCart(productName, price) {
+            var cartContent = document.getElementById("cartContent");
+            var newItem = document.createElement("div");
+            newItem.textContent = productName + " - " + price;
+            cartContent.appendChild(newItem);
+            alert('Product ' + productName + ' has been added to the cart.');
+        }
+
+        function emptyCart() {
+            var cartContent = document.getElementById("cartContent");
+            cartContent.innerHTML = ""; // Clear the content of the cart
+            alert('Keranjang telah dikosongkan.');
+        }
+    </script>
+<main>
+    <!-- Product section -->
+    <div class="product">
+        <!-- Product details -->
+    </div>
+    <div class="product">
+        <!-- Product details -->
+    </div>
+
+    <!-- About Us section -->
+    <section id="about">
+        <h2>Tentang Kami</h2>
+        <p>Tanaman Sansevieria, juga dikenal sebagai lidah mertua atau lidah buaya, adalah tanaman hias yang populer karena daya tahan yang tinggi dan penampilannya yang menarik. Mereka memiliki daun yang tebal, tegak, dan panjang dengan pola unik, dan mereka dapat tumbuh dengan baik dalam kondisi cahaya yang rendah dan jarang perlu disiram. Sansevieria juga dikenal untuk kemampuannya menyaring udara, membuatnya menjadi pilihan yang baik untuk dijadikan tanaman hias di dalam ruangan.</p>
+    </section>
+</main>
+<section id="contact">
+    <h2>Kontak Kami</h2>
+    <p>Jika Anda memiliki pertanyaan atau memerlukan bantuan, jangan ragu untuk menghubungi kami melalui:</p>
+    <ul>
+        <li>Email: <a href="adityasetiawan.2111@gmail.com">info@adityasetiawan.2111@gmail.com</a></li>
+        <li>Telepon: <a href="https://wa.me/62859102871312">0859102871312</a></li>
+        <li>Alamat: <a href="https://maps.google.com/?geocode=FV8wmP8dibRqBin1dGx4e-BoLjFu9lsY-Ee-Kg%3D%3D;FTIfmP8dcsJqBg%3D%3D&daddr=-6.8077592,107.6598903&saddr=Jl.%20Cikareumbi,%20Lembang,%20Kabupaten%20Bandung%20Barat,%20Jawa%20Barat%2040391&dirflg=d&ftid=0x2e68e07b786c74f5:0x2abe47f8185bf66e&lucs=,94216395,47071704,47069508,94218635,47084304,94208458,94208447&g_st=iw">Jalan Cikareumbi RT 05 RW 06, Kota bandung</a></li>
+        <li>Instagram: <a href="https://www.instagram.com/a_plant.id?igsh=MTk3bTZ5MGZocGFpaw%3D%3D&utm_source=qr">@a_plant</a></li>
+    </ul>
+</section>
